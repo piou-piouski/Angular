@@ -4,7 +4,7 @@
 
 Jean-louis Guenego
 
-## Logiciels
+## Logiciels && Extensions
 
 Volta\
 en cmd :
@@ -33,6 +33,14 @@ npm install typescript -D
 npm install @types/node
 ```
 
+```
+npm install nodemon -D
+```
+
+```
+npm install ts-node -D
+```
+
 # Commande
 
 Permet de générer un fichier.ts en stipulant la version -t
@@ -45,6 +53,20 @@ Une fois le tsconfig.json déclaré
 
 ```
 npx tsc
+```
+
+Permet d'écouter les changement sur le TS, comme SASS
+
+```
+npx nodemon src/server.ts
+```
+
+Une fois la ligne du dessus éxecuté et la ligne\
+"start": "nodemon src/server.ts"\
+ajouter au fichier package.json dans "scripts"
+
+```
+npm start
 ```
 
 ## Extensions VSCode
