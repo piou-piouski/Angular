@@ -41,6 +41,10 @@ npm install nodemon -D
 npm install ts-node -D
 ```
 
+```
+npm init @angular@latest front
+```
+
 # Commande
 
 Permet de générer un fichier.ts en stipulant la version -t
@@ -75,6 +79,11 @@ npm start
 - prettier
 - javascript console utils (CTRL + shift + l)
 - error lens
+- javascript
+
+## Extensions navigateur
+
+- json formatter
 
 ## DOC
 
@@ -85,6 +94,8 @@ https://expressjs.com/
 https://www.npmjs.com/
 
 https://nodejs.org/docs/latest-v18.x/api/
+
+https://angular.io/docs
 
 ## Autres
 
