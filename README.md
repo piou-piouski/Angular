@@ -80,6 +80,7 @@ npm start
 - javascript console utils (CTRL + shift + l)
 - error lens
 - javascript
+- Angular Language Service
 
 ## Extensions navigateur
 
