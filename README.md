@@ -25,6 +25,28 @@ npm install express
 npm install serve-index
 ```
 
+```
+npm install typescript -D
+```
+
+```
+npm install @types/node
+```
+
+# Commande
+
+Permet de générer un fichier.ts en stipulant la version -t
+
+```
+npx tsc -t es6 back/server.ts
+```
+
+Une fois le tsconfig.json déclaré
+
+```
+npx tsc
+```
+
 ## Extensions VSCode
 
 - git graph
