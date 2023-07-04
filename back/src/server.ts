@@ -1,12 +1,17 @@
-const express = require("express");
-const serveIndex = require("serve-index");
+import express, { NextFunction, Request, Response } from "express";
+import serveIndex from "serve-index";
 
 const app = express();
 const port = 3000;
 const publicDir = ".";
-
-app.use((req, res, next) => {
+const logger = (req: Request, res: Response, next: NextFunction) => {
   console.log("req = " + req.method + req.url);
+  next();
+};
+
+app.use(logger);
+app.use((req, res, next) => {
+  // console.log("req = " + req.method + req.url);
   next();
 });
 
@@ -20,5 +25,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(` test Example app listening on port ${port}`);
+  console.log(`test Example app listening on port ${port}`);
 });

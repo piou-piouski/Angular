@@ -74,6 +74,7 @@ npm start
 - git graph
 - prettier
 - javascript console utils (CTRL + shift + l)
+- error lens
 
 ## DOC
 
