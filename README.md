@@ -7,15 +7,16 @@ Jean-louis Guenego
 ## Logiciels
 
 Volta\
-en cmd : \
+en cmd :
 
-- volta install node@18\
+- volta install node@18
 - npm init -y
+- npm install express
 
 ## Extensions VSCode
 
-- git graph\
-- prettier\
+- git graph
+- prettier
 - javascript console utils (CTRL + shift + l)
 
 ## Autres
