@@ -45,7 +45,7 @@ npm install ts-node -D
 npm init @angular@latest front
 ```
 
-# Commande
+# Commande back
 
 Permet de générer un fichier.ts en stipulant la version -t
 
@@ -71,6 +71,18 @@ ajouter au fichier package.json dans "scripts"
 
 ```
 npm start
+```
+
+# Commande front
+
+```
+npm start
+```
+
+Génère le build de prod dans le répertoire front/dist
+
+```
+npm run build
 ```
 
 ## Extensions VSCode
