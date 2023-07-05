@@ -127,6 +127,10 @@ npx ng g m stock --route stock -m app
 npx ng g c stock/add
 ```
 
+```
+npx ng add @fortawesome/angular-fontawesome@0.13.x
+```
+
 ## Extensions VSCode
 
 - git graph
