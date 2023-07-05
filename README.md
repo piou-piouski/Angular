@@ -85,6 +85,12 @@ Génère le build de prod dans le répertoire front/dist
 npm run build
 ```
 
+Permet de générer(g) un module(m) avec pour nom layout, l'option --dry-run permet de simuler la commande
+
+```
+npx ng g m layout --dry-run -m app
+```
+
 ## Extensions VSCode
 
 - git graph
@@ -114,3 +120,9 @@ https://angular.io/docs
 
 ECMAScript\
 tc39
+
+Module Node => qui contient un package.json
+
+Module TS => qui contient un import ou export
+
+Module Angular => qui contient @NgModule
