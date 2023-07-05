@@ -91,6 +91,12 @@ Permet de générer(g) un module(m) avec pour nom layout, l'option --dry-run per
 npx ng g m layout --dry-run -m app
 ```
 
+Permet de créer un component(c) header dans le module layout qui soit public
+
+```
+npx ng g c layout/header --export
+```
+
 ## Extensions VSCode
 
 - git graph
