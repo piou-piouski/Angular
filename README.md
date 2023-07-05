@@ -107,6 +107,14 @@ Pour retirer un packet
 npm r normalize.css
 ```
 
+```
+npx ng g c routes/home
+```
+
+```
+npx ng g c routes/legal
+```
+
 ## Extensions VSCode
 
 - git graph
