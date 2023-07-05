@@ -85,7 +85,7 @@ Génère le build de prod dans le répertoire front/dist
 npm run build
 ```
 
-Permet de générer(g) un module(m) avec pour nom layout, l'option --dry-run permet de simuler la commande
+Permet de générer(g) un module(m) avec pour nom layout, l'option --dry-run permet de simuler la commande, -m pour ajouter l'import du module dans app
 
 ```
 npx ng g m layout --dry-run -m app
