@@ -7,10 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    title: 'Homepage',
   },
   {
     path: 'legal',
     component: LegalComponent,
+    title: 'Mentions légales',
   },
 ];
 
