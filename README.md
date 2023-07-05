@@ -123,6 +123,10 @@ npm install sanitize.css
 npx ng g m stock --route stock -m app
 ```
 
+```
+npx ng g c stock/add
+```
+
 ## Extensions VSCode
 
 - git graph
