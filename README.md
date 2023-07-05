@@ -115,6 +115,14 @@ npx ng g c routes/home
 npx ng g c routes/legal
 ```
 
+```
+npm install sanitize.css
+```
+
+```
+npx ng g m stock --route stock -m app
+```
+
 ## Extensions VSCode
 
 - git graph
