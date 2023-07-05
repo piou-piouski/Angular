@@ -97,6 +97,16 @@ Permet de créer un component(c) header dans le module layout qui soit public
 npx ng g c layout/header --export
 ```
 
+```
+npm install normalize.css
+```
+
+Pour retirer un packet
+
+```
+npm r normalize.css
+```
+
 ## Extensions VSCode
 
 - git graph
@@ -121,6 +131,14 @@ https://www.npmjs.com/
 https://nodejs.org/docs/latest-v18.x/api/
 
 https://angular.io/docs
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+https://flexboxfroggy.com/#fr
+
+https://ux-lois.github.io/
+
+https://csstools.github.io/normalize.css/
 
 ## Autres
 
