@@ -13,7 +13,8 @@ let articles: Article[] = [
   providedIn: 'root',
 })
 export class ArticleService {
-  articles$ = new BehaviorSubject<Article[]>(articles);
+  // articles$ = new BehaviorSubject<Article[] | undefined>(articles);
+  articles$ = new BehaviorSubject<Article[] | undefined>(undefined);
 
   constructor() {}
 
@@ -28,7 +29,11 @@ export class ArticleService {
   }
 
   refresh(): Observable<void> {
-    return of(undefined);
+    return of(undefined).pipe(
+      tap(() => {
+        this.articles$.next(articles);
+      })
+    );
   }
 
   remove(ids: string[]): any {

@@ -24,7 +24,17 @@ export class StockComponent {
   selectedArticles = new Set<Article>();
   isRefreshing = false;
 
-  constructor(protected readonly articleService: ArticleService) {}
+  constructor(protected readonly articleService: ArticleService) {
+    if (articleService.articles$.value === undefined) {
+      // articleService.refresh();
+      of(undefined)
+        .pipe(
+          delay(2000),
+          switchMap(() => articleService.refresh())
+        )
+        .subscribe();
+    }
+  }
 
   getArticleId(index: number, a: Article) {
     return a.id;
