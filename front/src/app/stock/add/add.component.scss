@@ -14,6 +14,16 @@ form {
       border: 0.1em solid #aaa;
       border-radius: 0.3em;
       padding: 0.5em 1em;
+
+      &.ng-valid,
+      &.ng-valid:focus {
+        border: 0.1em solid #06ac2f;
+      }
+
+      &.ng-invalid,
+      &.ng-invalid:focus {
+        border: 0.1em solid #f80606;
+      }
     }
   }
   div.error {

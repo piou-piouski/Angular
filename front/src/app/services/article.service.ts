@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Article, NewArticle } from '../interfaces/article';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of, tap } from 'rxjs';
 
-const articles: Article[] = [
+let articles: Article[] = [
   { id: '1', name: 'tournevis', price: 2.75, qty: 120 },
   { id: '2', name: 'marteau', price: 5.78, qty: 48 },
   { id: '3', name: 'vis', price: 0.06, qty: 540 },
@@ -18,10 +18,25 @@ export class ArticleService {
   constructor() {}
 
   add(newArticle: NewArticle): Observable<void> {
-    return of(undefined);
+    return of(undefined).pipe(
+      tap(() => {
+        const article = { ...newArticle, id: crypto.randomUUID() };
+        articles.push(article);
+        this.articles$.next(articles);
+      })
+    );
   }
 
   refresh(): Observable<void> {
-    throw new Error('Method not implemented.');
+    return of(undefined);
+  }
+
+  remove(ids: string[]): any {
+    return of(undefined).pipe(
+      tap(() => {
+        articles = articles.filter((a) => !ids.includes(a.id));
+        this.articles$.next(articles);
+      })
+    );
   }
 }

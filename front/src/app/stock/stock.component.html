@@ -9,8 +9,16 @@
       <a routerLink="add" class="button" title="Ajouter">
         <fa-icon [icon]="faPlus"></fa-icon>
       </a>
-      <button title="Supprimer">
-        <fa-icon [icon]="faTrashCan"></fa-icon>
+      <button
+        title="Supprimer"
+        [hidden]="selectedArticles.size === 0"
+        (click)="remove()"
+        [disabled]="isRemoving"
+      >
+        <fa-icon
+          [icon]="isRemoving ? faCircleNotch : faTrashCan"
+          [spin]="isRemoving"
+        ></fa-icon>
       </button>
     </nav>
     <div class="error"></div>
@@ -28,6 +36,8 @@
             let a of articleService.articles$ | async;
             trackBy: getArticleId
           "
+          (click)="select(a)"
+          [class.selected]="selectedArticles.has(a)"
         >
           <td class="name">{{ a.name }}</td>
           <td class="price">{{ a.price }} €</td>
