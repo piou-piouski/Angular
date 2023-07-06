@@ -148,6 +148,7 @@ npx ng g s services/article
 - error lens
 - javascript
 - Angular Language Service
+- typescript class organizer (décocher la seconde et derniere option dans le setting, son raccourci est ctrl+shift+o)
 
 ## Extensions navigateur
 
