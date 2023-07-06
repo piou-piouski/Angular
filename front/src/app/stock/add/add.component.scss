@@ -15,14 +15,20 @@ form {
       border-radius: 0.3em;
       padding: 0.5em 1em;
 
-      &.ng-valid,
-      &.ng-valid:focus {
+      &.ng-valid {
         border: 0.1em solid #06ac2f;
       }
 
-      &.ng-invalid,
-      &.ng-invalid:focus {
+      &.ng-invalid {
         border: 0.1em solid #f80606;
+      }
+
+      &.ng-valid:focus {
+        outline: 0.2em solid #06ac2f;
+      }
+
+      &.ng-invalid:focus {
+        outline: 0.2em solid #f80606;
       }
     }
   }

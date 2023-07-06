@@ -15,13 +15,14 @@ import { catchError, delay, finalize, of, switchMap, tap } from 'rxjs';
   styleUrls: ['./stock.component.scss'],
 })
 export class StockComponent {
+  errorMsg = '';
+  faCircleNotch = faCircleNotch;
   faPlus = faPlus;
   faRotateRight = faRotateRight;
   faTrashCan = faTrashCan;
-  selectedArticles = new Set<Article>();
-  errorMsg = '';
   isRemoving = false;
-  faCircleNotch = faCircleNotch;
+  selectedArticles = new Set<Article>();
+  isRefreshing = false;
 
   constructor(protected readonly articleService: ArticleService) {}
 
@@ -29,12 +30,28 @@ export class StockComponent {
     return a.id;
   }
 
-  select(a: Article) {
-    if (this.selectedArticles.has(a)) {
-      this.selectedArticles.delete(a);
-      return;
-    }
-    this.selectedArticles.add(a);
+  refresh() {
+    console.log('refresh');
+    of(undefined)
+      .pipe(
+        tap(() => {
+          this.errorMsg = '';
+          this.isRefreshing = true;
+        }),
+        delay(1000),
+        switchMap(() => {
+          return this.articleService.refresh();
+        }),
+        catchError((err) => {
+          console.log('err: ', err);
+          this.errorMsg = 'Erreur technique';
+          return of(undefined);
+        }),
+        finalize(() => {
+          this.isRefreshing = false;
+        })
+      )
+      .subscribe();
   }
 
   remove() {
@@ -68,5 +85,13 @@ export class StockComponent {
         })
       )
       .subscribe();
+  }
+
+  select(a: Article) {
+    if (this.selectedArticles.has(a)) {
+      this.selectedArticles.delete(a);
+      return;
+    }
+    this.selectedArticles.add(a);
   }
 }
