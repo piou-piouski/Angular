@@ -2,7 +2,8 @@
 
 ## Formateur
 
-Jean-louis Guenego
+Jean-louis Guenego\
+https://github.com/jlg-formation/agupa1-july-2023/tree/master
 
 ## Logiciels && Extensions
 
@@ -143,6 +144,7 @@ npx ng add @fortawesome/angular-fontawesome@0.13.x
 ## Extensions navigateur
 
 - json formatter
+- angular devtools
 
 ## DOC
 
