@@ -23,7 +23,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let a of articles; trackBy: getArticleId">
+          <td class="name">{{ a.name }}</td>
+          <td class="price">{{ a.price }} €</td>
+          <td class="qty">{{ a.qty }}</td>
+        </tr>
+
+        <!-- <tr>
           <td class="name">Tournevis</td>
           <td class="price">3.89 €</td>
           <td class="qty">58</td>
@@ -42,7 +48,7 @@
           <td class="name">Clou</td>
           <td class="price">0.9 €</td>
           <td class="qty">580</td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>

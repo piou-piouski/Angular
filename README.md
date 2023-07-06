@@ -132,6 +132,14 @@ npx ng g c stock/add
 npx ng add @fortawesome/angular-fontawesome@0.13.x
 ```
 
+```
+npx ng g i interfaces/article
+```
+
+```
+npx ng g s services/article
+```
+
 ## Extensions VSCode
 
 - git graph
