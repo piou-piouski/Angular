@@ -46,7 +46,7 @@ npm install ts-node -D
 npm init @angular@latest front
 ```
 
-# Commande back
+## Commande back
 
 Permet de générer un fichier.ts en stipulant la version -t
 
@@ -74,7 +74,27 @@ ajouter au fichier package.json dans "scripts"
 npm start
 ```
 
-# Commande front
+```
+npm init @eslint/config
+```
+
+√ How would you like to use ESLint? · problems  
+√ What type of modules does your project use? · esm
+√ Which framework does your project use? · none
+√ Does your project use TypeScript? · No / Yes
+√ Where does your code run? · browser
+√ What format do you want your config file to be in? · JSON
+Local ESLint installation not found.
+The config that you've selected requires the following dependencies:
+@typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint@latest
+√ Would you like to install them now? · No / Yes
+√ Which package manager do you want to use? · npm
+
+```
+npx eslint .
+```
+
+## Commande front
 
 ```
 npm start
@@ -153,6 +173,7 @@ npx ng g s services/http-article
 - javascript
 - Angular Language Service
 - typescript class organizer (décocher la seconde et derniere option dans le setting, son raccourci est ctrl+shift+o)
+- eslint
 
 ## Extensions navigateur
 
@@ -189,6 +210,8 @@ https://refactoring.guru/
 
 https://web.dev/rail/
 
+https://eslint.org/
+
 ## Autres
 
 ECMAScript\
@@ -203,3 +226,7 @@ Module Angular => qui contient @NgModule
 add => import { HttpClientModule } from '@angular/common/http'; dans app.module.ts
 
 Mettre des delay de 300 ms sur les boutons
+
+## TEST
+
+ng serve => ng lint => ng test => ng e2e => ng build
