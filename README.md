@@ -290,3 +290,23 @@ if (!isDevMode()) {
   };
 }
 ```
+
+Dans angular.json\
+
+```
+"serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "front:build:production"
+            },
+            "development": {
+              "browserTarget": "front:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": { "proxyConfig": "src/proxy.conf.json" }
+        },
+```
+
+Puis ajout du fichier /front/src/proxy.conf.json
