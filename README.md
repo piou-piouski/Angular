@@ -197,3 +197,5 @@ Module Node => qui contient un package.json
 Module TS => qui contient un import ou export
 
 Module Angular => qui contient @NgModule
+
+add => import { HttpClientModule } from '@angular/common/http'; dans app.module.ts
