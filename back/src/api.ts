@@ -1,5 +1,5 @@
 import express from "express";
-import { Article } from "./interfaces/article";
+import { Article } from "./interfaces/Article";
 
 const app = express.Router();
 

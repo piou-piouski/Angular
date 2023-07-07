@@ -140,6 +140,10 @@ npx ng g i interfaces/article
 npx ng g s services/article
 ```
 
+```
+npx ng g s services/http-article
+```
+
 ## Extensions VSCode
 
 - git graph
