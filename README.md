@@ -168,6 +168,16 @@ npx ng g s services/http-article
 npx ng lint
 ```
 
+```
+npx ng test
+```
+
+Permet de régénerer le fichier de config pour les test
+
+```
+npx ng generate config karma
+```
+
 ## Extensions VSCode
 
 - git graph
