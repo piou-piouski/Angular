@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ArticleService } from './article.service';
-import { Observable, delay, map, of, switchMap } from 'rxjs';
+import { Observable, map, of, switchMap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Article, NewArticle } from '../interfaces/article';
 
