@@ -200,6 +200,10 @@ npx cypress open
 npx cypress run
 ```
 
+```
+npm run build
+```
+
 ## Extensions VSCode
 
 - git graph
@@ -266,3 +270,23 @@ Mettre des delay de 300 ms sur les boutons
 ## TEST
 
 ng serve => ng lint => ng test => ng e2e => ng build
+
+# Redirect url
+
+Dans server.ts\
+
+```
+app.get("/**", (req, res) => {
+  res.sendFile("index.html", { root: publicDir });
+});
+```
+
+Dans main.ts\
+
+```
+if (!isDevMode()) {
+  console.log = () => {
+    // Je suis vide
+  };
+}
+```
