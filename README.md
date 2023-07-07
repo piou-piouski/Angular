@@ -201,3 +201,5 @@ Module TS => qui contient un import ou export
 Module Angular => qui contient @NgModule
 
 add => import { HttpClientModule } from '@angular/common/http'; dans app.module.ts
+
+Mettre des delay de 300 ms sur les boutons

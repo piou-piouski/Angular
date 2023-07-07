@@ -29,7 +29,7 @@ export class StockComponent {
       // articleService.refresh();
       of(undefined)
         .pipe(
-          delay(2000),
+          delay(300),
           switchMap(() => articleService.refresh())
         )
         .subscribe();
@@ -48,7 +48,7 @@ export class StockComponent {
           this.errorMsg = '';
           this.isRefreshing = true;
         }),
-        //delay(1000),
+        delay(300),
         switchMap(() => {
           return this.articleService.refresh();
         }),
@@ -72,7 +72,7 @@ export class StockComponent {
           this.errorMsg = '';
           this.isRemoving = true;
         }),
-        //delay(1000),
+        delay(300),
         switchMap(() => {
           // spread operator ...
           // permet de recopier les elements d'ensemble dans le tableau ...this.selectedArticles
