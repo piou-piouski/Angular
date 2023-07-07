@@ -164,6 +164,10 @@ npx ng g s services/article
 npx ng g s services/http-article
 ```
 
+```
+npx ng lint
+```
+
 ## Extensions VSCode
 
 - git graph
