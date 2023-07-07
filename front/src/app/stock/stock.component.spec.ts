@@ -1,7 +1,14 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+} from '@angular/core/testing';
 
 import { StockComponent } from './stock.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { throwError } from 'rxjs';
+import { a1 } from 'src/test/data';
 
 describe('StockComponent', () => {
   let component: StockComponent;
@@ -14,10 +21,51 @@ describe('StockComponent', () => {
     });
     fixture = TestBed.createComponent(StockComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    //fixture.detectChanges();
   });
 
   it('should create', () => {
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
+
+  it('should load at first', fakeAsync(() => {
+    fixture.detectChanges();
+    tick(300);
+    expect(component).toBeTruthy();
+  }));
+
+  it('should get article id', fakeAsync(() => {
+    const id = component.getArticleId(0, a1);
+    expect(id).toBe('a1');
+  }));
+
+  it('should refresh', fakeAsync(() => {
+    component.refresh();
+    tick(300);
+    expect(component).toBeTruthy();
+  }));
+  it('should refresh in error', fakeAsync(() => {
+    component['articleService'].refresh = () => {
+      return throwError(() => new Error('oups'));
+    };
+    component.refresh();
+    tick(300);
+    expect(component).toBeTruthy();
+  }));
+
+  it('should remove', fakeAsync(() => {
+    component.selectedArticles = new Set([a1]);
+    component.remove();
+    tick(300);
+    expect(component).toBeTruthy();
+  }));
+  it('should remove in error', fakeAsync(() => {
+    component['articleService'].refresh = () => {
+      return throwError(() => new Error('oups'));
+    };
+    component.remove();
+    tick(300);
+    expect(component).toBeTruthy();
+  }));
 });

@@ -178,6 +178,24 @@ Permet de régénerer le fichier de config pour les test
 npx ng generate config karma
 ```
 
+```
+npx ng e2e
+```
+
+ℹ Using package manager: npm
+✔ Found compatible package version: @cypress/schematic@2.5.0.
+✔ Package information loaded.
+
+The package @cypress/schematic@2.5.0 will be installed and executed.
+Would you like to proceed? Yes
+✔ Packages successfully installed.
+? Would you like the default `ng e2e` command to use Cypress? [ Protractor to Cypress Migration Guide: https://on.cypress.io/protractor-to-cypress?cli=true ] Yes
+? Would you like to add Cypress component testing? This will add all files needed for Cypress component testing. Yes
+
+```
+npx cypress open
+```
+
 ## Extensions VSCode
 
 - git graph

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import {
   faCircleNotch,
@@ -14,7 +14,7 @@ import { catchError, delay, finalize, of, switchMap, tap } from 'rxjs';
   templateUrl: './stock.component.html',
   styleUrls: ['./stock.component.scss'],
 })
-export class StockComponent {
+export class StockComponent implements OnInit {
   errorMsg = '';
   faCircleNotch = faCircleNotch;
   faPlus = faPlus;
@@ -24,13 +24,15 @@ export class StockComponent {
   selectedArticles = new Set<Article>();
   isRefreshing = false;
 
-  constructor(protected readonly articleService: ArticleService) {
-    if (articleService.articles$.value === undefined) {
+  constructor(protected readonly articleService: ArticleService) {}
+
+  ngOnInit(): void {
+    if (this.articleService.articles$.value === undefined) {
       // articleService.refresh();
       of(undefined)
         .pipe(
           delay(300),
-          switchMap(() => articleService.refresh())
+          switchMap(() => this.articleService.refresh())
         )
         .subscribe();
     }
