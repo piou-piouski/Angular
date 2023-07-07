@@ -11,7 +11,6 @@ const logger = (req: Request, res: Response, next: NextFunction) => {
 };
 
 app.use(logger);
-
 app.use("/api", api);
 
 app.use((req, res, next) => {

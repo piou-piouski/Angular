@@ -4,7 +4,7 @@ import { Article, NewArticle } from "./interfaces/Article";
 
 const app = express.Router();
 
-const articles: Article[] = [
+let articles: Article[] = [
   { id: "1", name: "tournevis", price: 2.75, qty: 120 },
   { id: "2", name: "marteau", price: 5.78, qty: 48 },
   { id: "3", name: "vis", price: 0.06, qty: 540 },
@@ -12,8 +12,9 @@ const articles: Article[] = [
 ];
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "*");
+  res.setHeader("Access-Control-Allow-Origin", "*"); //POST GET DELETE
+  res.setHeader("Access-Control-Allow-Headers", "*"); //GET DELETE
+  res.setHeader("Access-Control-Allow-Methods", "*"); //DELETE
   next();
 });
 
@@ -31,9 +32,10 @@ app.post("/articles", (req, res) => {
   res.status(201).end();
 });
 
-// app.delete("/articles", (req, res) => {
-//   //const delArticle =
-//   this.articles = articles.filter((a) => !ids.includes(a.id));
-// });
+app.delete("/articles", (req, res) => {
+  const ids: string[] = req.body;
+  articles = articles.filter((a) => !ids.includes(a.id));
+  res.status(204).end();
+});
 
 export const api = app;
