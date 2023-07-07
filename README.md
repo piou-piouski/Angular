@@ -196,6 +196,10 @@ Would you like to proceed? Yes
 npx cypress open
 ```
 
+```
+npx cypress run
+```
+
 ## Extensions VSCode
 
 - git graph
